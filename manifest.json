@@ -1,0 +1,40 @@
+
+{ "name" : "Blip.Fm + GMail Weekly Update Extension"
+
+, "version" : "0.1"
+, "description" : 
+		"Extract list of users from a Blip.Fm \"Weekly Activity Update\" email in GMail."
+
+, "options_page" : "options.html"
+
+, "permissions": 
+	[ "tabs"
+	, "https://mail.google.com/*"
+	]
+
+, "icons" : 
+	{ "48"  : "icon-48.png"
+	, "128" : "icon-128.png"
+  }
+
+, "background_page" : "background.html"
+
+, "page_action" : 
+	{ "default_title": "Blip.Fm Activity Email Utilities"
+	, "default_icon": "icon-48.png"
+	, "default_popup": "popup.html"
+  }
+
+, "content_scripts" : 
+	[ { "matches" : [ "https://mail.google.com/mail/*" ]
+    , "js" : 
+				[ "jquery-1.4.1.min.js"
+				, "jquery-ui-1.8.5.custom.min.js"
+				, "blip_cs_acty.js"
+				]
+		, "css" : [ "jquery-ui-1.8.5.custom.css" ]
+    }
+  ]
+}
+
+// vim: filetype=javascript:ts=2:

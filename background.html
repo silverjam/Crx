@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html><head></head>
+<body><script>
+
+function onRequest(request, sender, sendResponse)
+{
+	if ( request == 'enable' )
+	{
+		chrome.pageAction.show(sender.tab.id);
+		console.log("enabled icon");
+	}
+
+	else if ( request == 'disable' )
+	{
+		chrome.pageAction.hide(sender.tab.id);
+		console.log("disabled icon");
+	}
+	
+	sendResponse({});
+};
+
+chrome.extension.onRequest.addListener(onRequest);
+
+</script></body></html>
