@@ -1,24 +1,73 @@
 <!DOCTYPE html>
 <html><head></head>
-<body><script>
+<body>
 
-function onRequest(request, sender, sendResponse)
-{
-	if ( request == 'enable' )
+<script type="text/javascript" src="options.js"></script>
+
+<script>
+g_reblips = [];
+
+chrome.extension.onRequest.addListener(
+	function(request, sender, sendResponse)
 	{
-		chrome.pageAction.show(sender.tab.id);
-		console.log("enabled icon");
-	}
+		response = {};
 
-	else if ( request == 'disable' )
-	{
-		chrome.pageAction.hide(sender.tab.id);
-		console.log("disabled icon");
-	}
-	
-	sendResponse({});
-};
+		msg = request.m;
 
-chrome.extension.onRequest.addListener(onRequest);
+		if ( msg == 'enable' ) {
+			chrome.pageAction.show(sender.tab.id);
+			console.log("enabled icon");
+		}
+
+		else if ( msg == 'disable' ) {
+			chrome.pageAction.hide(sender.tab.id);
+			console.log("disabled icon");
+		}
+
+		else if ( msg == 'open_reblip' ) {
+
+			console.log('processing open_reblip');
+
+			chrome.tabs.create(
+				{url: request.d},
+				function(tab) {
+					console.log('opened tab', tab);
+					g_reblips.push(tab.id);
+				}
+			);
+		}
+
+		else if ( msg == 'is_reblip' ) {
+
+			console.log('is_reblip', sender.tab.id, g_reblips)
+
+			response = g_reblips.indexOf(sender.tab.id);
+
+			if ( response > -1 )
+				g_reblips.splice(response, 1);
+
+			response = response > -1;
+		}
+
+		else {
+			console.log("Unknown message: ", msg);
+			response = undefined;
+		}
+		
+		console.log('Sending response:', response);
+		sendResponse(response);
+	}
+);
+
+chrome.tabs.onUpdated.addListener(
+	function(tabId, info, tab){
+		if ( ! get_reblip_in_new_window() )
+			return;
+
+		if ( tab.url.indexOf("http://blip.fm") == 0 ) {
+			chrome.pageAction.show(tabId);
+		}
+	}
+);
 
 </script></body></html>

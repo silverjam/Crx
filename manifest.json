@@ -10,6 +10,7 @@
 , "permissions": 
 	[ "tabs"
 	, "https://mail.google.com/*"
+	, "http://blip.fm/*"
 	]
 
 , "icons" : 
@@ -26,10 +27,15 @@
   }
 
 , "content_scripts" : 
-	[ { "matches" : [ "https://mail.google.com/mail/*" ]
+	[ { "matches" : 
+		[ "https://mail.google.com/mail/*"
+		, "http://blip.fm/*"
+		]
     , "js" : 
 				[ "jquery-1.4.1.min.js"
 				, "jquery-ui-1.8.5.custom.min.js"
+				, "jquery-watch-plugin-1.2.0.js"
+				, "options.js"
 				, "blip_cs_acty.js"
 				]
 		, "css" : [ "jquery-ui-1.8.5.custom.css" ]

@@ -173,7 +173,7 @@ function on_blip_email_unloaded(desc)
 	if ( desc.context == null )
 		return;
 
-	chrome.extension.sendRequest('disable', function(x) {});
+	chrome.extension.sendRequest({m:'disable'}, function(x) {});
 	desc.context = null;
 }
 
@@ -182,7 +182,7 @@ function on_blip_email_loaded(desc)
 	if ( desc.context.attached )
 		return;
 
-	chrome.extension.sendRequest('enable', function(x) {});
+	chrome.extension.sendRequest({m:'enable'}, function(x) {});
 
 	desc
 		.context
@@ -203,9 +203,63 @@ function on_blip_email_loaded(desc)
 	desc.attached = true;
 }
 
+function check_reblip_and_handle()
+{
+	chrome.extension.sendRequest(
+		{m:'is_reblip'}, 
+		function(is_reblip) { 
+			console.log('is_reblip: ' + is_reblip);
+			if (is_reblip) { 
+				console.log($("#blips > .actionsmenu > .clickable").click());
+			}
+		}
+	);
+}
+
+function insert_reblip_link(node)
+{
+	$(node).find(".date").each(function(){
+
+		console.log(node);
+
+		var rbid = $($x(this, "../../.."));
+		console.log(rbid);
+
+		rbid = rbid.attr('id').split("tweem")[1];
+
+		var a_node = $(this).find("a[href*='blip.fm']:first");
+		var reblip = a_node.clone();
+
+		reblip.text(' [+RB] ');
+		reblip.attr('href', "http://blip.fm/home?reblipId=" + rbid);
+		reblip.attr('target', "_blank");
+
+/*
+		reblip.click(function(){
+		
+			console.log('sending open_reblip');
+
+			chrome.extension.sendRequest(
+				{m:'open_reblip', d:href}, 
+				function(x) {});
+
+			return false;
+		});
+*/
+
+		a_node.after(reblip);
+	});
+}
+
+if ( get_reblip_in_new_window() )
+{
+	$(document).bind('DOMNodeInserted', function(evt){
+		insert_reblip_link(evt.target);
+	});
+}
+
 function main()
 {
-
 	var descriptor = 
 		rescan_descriptor(
 			is_blip_email_loaded,
@@ -213,7 +267,12 @@ function main()
 			on_blip_email_unloaded,
 			NaN);
 
-	scan(descriptor)
+	scan(descriptor);
+	insert_reblip_link(document);
+
+	check_reblip_and_handle();
 }
 
 main()
+
+// vim: ts=4:sw=4:

@@ -1,21 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head><title>Blip.Fm + GMail Weekly Update Extension</title></head>
+<head>
+<title>Blip.Fm + GMail Weekly Update Extension</title>
+<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="options.js"></script>
+<style type="text/css">
+.border { 
+	border: 1px solid #6080a0; 	
+	width: 80%; 
+  margin-bottom: 10px;
+}
+#header { 
+	background-color: #e0e0e0; 
+	border-bottom: 1px solid #6080a0;
+ 	width: 80%;
+}
+#options_list {
+    list-style-type: none;
+}
+#options_list lh {
+  text-decoration: underline;
+}
+.options_header {
+  background-color: #e0e0e0;
+  margin: 5px;
+}
+.clickable {
+  text-decoration: none;
+  color: normal;
+}
+</style>
+</head>
 <body>
-<h2>Blip.Fm + GMail Weekly Update Extension</h2>
-<hr align="left" style="width: 25%"/>
+
+<h2 id="header">Blip.Fm + GMail Weekly Update Extension</h2>
+
 <p>Thanks for using this extension!
 Please send comments, bugs, and/or questions to the project
 <a href="https://github.com/silverjam/BlipFm-Chrome-Extension">webpage</a>.
 Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
 </p>
-<hr align="left" style="width: 25%"/>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="ERGFLR99AEJ24">
-<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-<hr align="left" style="width: 25%"/>
+
+<div class="border">
+  <div class="options_header">Options</div>
+  <ul id="options_list">
+  <li>
+    <form>
+      <input 
+        type="checkbox"
+        id="option__reblip_in_new_window"
+        value="reblip_in_new_window"
+      />
+      <label for="option__reblip_in_new_window">
+        Enable <em>reblip in new window</em> (<code>[+RB]</code> in blips)</a>
+      </label>
+    </form>
+  </li>
+</ul>
+</div>
+
+<script>
+  if ( get_reblip_in_new_window() )
+    $("input").val(["reblip_in_new_window"])
+
+  $("#option__reblip_in_new_window").click(function(){
+
+    var val = $(this).is(":checked");
+    toggle_reblip_in_new_window();
+
+    console.log("Toggled reblip_in_new_window:", val);
+  });
+</script>
+
+<div class="border">
+  <div class="options_header">Donate <input type="button" href="#" id="donate_click" class="clickable" value=" + "/></div>
+  <div id="donate"> <form
+  action="https://www.paypal.com/cgi-bin/webscr" method="post"> <input
+  type="hidden" name="cmd" value="_s-xclick"> <input type="hidden"
+  name="hosted_button_id" value="ERGFLR99AEJ24"> <input type="image"
+  src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0"
+  name="submit" alt="PayPal - The safer, easier way to pay online!"> <img alt=""
+  border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+  height="1"> </form> </div>
+</div>
+
+<script>
+  $("#donate_click")
+    .click(function(){ $("#donate").slideToggle(); return false; });
+
+  $("#donate").hide();
+</script>
+
 </body>
 </html>
+
+<!-- vim: et:sts=2:sw=2:ts=2:tw=0:
+-->
