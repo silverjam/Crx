@@ -215,27 +215,14 @@ function on_blip_email_loaded(desc)
 	desc.attached = true;
 }
 
-function check_reblip_and_handle()
-{
-	chrome.extension.sendRequest(
-		{m:'is_reblip'}, 
-		function(is_reblip) { 
-			console.log('is_reblip: ' + is_reblip);
-			if (is_reblip) { 
-				console.log($("#blips > .actionsmenu > .clickable").click());
-			}
-		}
-	);
-}
-
 function insert_reblip_link(node)
 {
 	$(node).find(".date").each(function(){
 
-		console.log(node);
+		//console.log(node);
 
 		var rbid = $($x(this, "../../.."));
-		console.log(rbid);
+		//console.log(rbid);
 
 		rbid = rbid.attr('id').split("tweem")[1];
 
@@ -245,19 +232,6 @@ function insert_reblip_link(node)
 		reblip.text(' [+RB] ');
 		reblip.attr('href', "http://blip.fm/home?reblipId=" + rbid);
 		reblip.attr('target', "_blank");
-
-/*
-		reblip.click(function(){
-		
-			console.log('sending open_reblip');
-
-			chrome.extension.sendRequest(
-				{m:'open_reblip', d:href}, 
-				function(x) {});
-
-			return false;
-		});
-*/
 
 		a_node.after(reblip);
 	});

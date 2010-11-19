@@ -8,6 +8,7 @@
 g_reblips = [];
 
 chrome.extension.onRequest.addListener(
+
 	function(request, sender, sendResponse)
 	{
 		response = {};
@@ -24,31 +25,6 @@ chrome.extension.onRequest.addListener(
 			console.log("disabled icon");
 		}
 
-		else if ( msg == 'open_reblip' ) {
-
-			console.log('processing open_reblip');
-
-			chrome.tabs.create(
-				{url: request.d},
-				function(tab) {
-					console.log('opened tab', tab);
-					g_reblips.push(tab.id);
-				}
-			);
-		}
-
-		else if ( msg == 'is_reblip' ) {
-
-			console.log('is_reblip', sender.tab.id, g_reblips)
-
-			response = g_reblips.indexOf(sender.tab.id);
-
-			if ( response > -1 )
-				g_reblips.splice(response, 1);
-
-			response = response > -1;
-		}
-
 		else {
 			console.log("Unknown message: ", msg);
 			response = undefined;
@@ -60,6 +36,7 @@ chrome.extension.onRequest.addListener(
 );
 
 chrome.tabs.onUpdated.addListener(
+
 	function(tabId, info, tab){
 		if ( ! get_reblip_in_new_window() )
 			return;
