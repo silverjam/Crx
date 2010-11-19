@@ -1,3 +1,15 @@
+function simclk(id) 
+{
+  var evt = document.createEvent("MouseEvents");
+  evt.initMouseEvent("click", true, true, window,
+    0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  var cb = document.getElementById(id); 
+  var canceled = !cb.dispatchEvent(evt);
+  if(canceled) {
+    console.log("preventDefault for click event on #" + id);
+  } 
+}
+
 function $x(aNode, aExpr)
 {
   var xpe = new XPathEvaluator();
