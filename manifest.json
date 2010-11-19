@@ -1,7 +1,7 @@
 
 { "name" : "Blip.Fm + GMail Weekly Update Extension"
 
-, "version" : "0.1"
+, "version" : "0.2"
 , "description" : 
 		"Extract list of users from a Blip.Fm \"Weekly Activity Update\" email in GMail."
 
