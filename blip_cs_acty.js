@@ -279,7 +279,7 @@ function main()
 		});
 	}
 
-	if ( get_reblip_insert_default() )
+	if ( get_reblip_default() )
 		insert_reblip_default(document);
 }
 

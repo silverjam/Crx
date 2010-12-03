@@ -22,3 +22,4 @@ rm -v $Z
 echo 'Zipping:'
 zip -r $Z .
 popd
+
