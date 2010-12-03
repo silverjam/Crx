@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Blip.Fm + GMail Weekly Update Extension</title>
+<title>Blip.Fm + GMail Extension</title>
 <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="options.js"></script>
 <style type="text/css">
@@ -33,7 +33,7 @@
 </head>
 <body>
 
-<h2 id="header">Blip.Fm + GMail Weekly Update Extension</h2>
+<h2 id="header">Blip.Fm + GMail Extension</h2>
 
 <p>Thanks for using this extension!
 Please send comments, bugs, and/or questions to the project
@@ -46,29 +46,84 @@ Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
   <ul id="options_list">
   <li>
     <form>
+
       <input 
         type="checkbox"
         id="option__reblip_in_new_window"
         value="reblip_in_new_window"
       />
       <label for="option__reblip_in_new_window">
-        Enable <em>reblip in new window</em> (<code>[+RB]</code> in blips)</a>
+        Enable <em>reblip in new window</em> (<code>[+RB]</code> in blips)
       </label>
+
+      <br/>
+      <input 
+        type="checkbox"
+        id="option__reblip_in_new_window_background"
+        value="reblip_in_new_window_background"
+      />
+      <label for="option__reblip_in_new_window_background">
+        Open in background for <em>reblip in new window</em> (<code>[+RB]</code>)
+      </label>
+
+      <br/>
+      <input 
+        type="checkbox"
+        id="option__reblip_default"
+        value="reblip_default"
+      />
+      <label for="option__reblip_default">
+        Add an <em>insert default text</em> button (song name / band) to the reblip form (<code>[+D]</code>)
+      </label>
+  
     </form>
   </li>
 </ul>
 </div>
 
 <script>
-  if ( get_reblip_in_new_window() )
-    $("input").val(["reblip_in_new_window"])
 
+  ///////////////////////////////////////////////////////////////////////////
+  // Load initial values
+  ///////////////////////////////////////////////////////////////////////////
+  if ( get_reblip_in_new_window() )
+    $("#option__reblip_in_new_window")
+      .val(["reblip_in_new_window"]);
+
+  if ( get_reblip_in_new_window_background() )
+    $("#option__reblip_in_new_window_background")
+      .val(["reblip_in_new_window_background"])
+
+  if ( get_reblip_default() )
+    $("#option__reblip_default")
+      .val(["reblip_default"])
+
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Toggle values
+  ///////////////////////////////////////////////////////////////////////////
   $("#option__reblip_in_new_window").click(function(){
 
     var val = $(this).is(":checked");
     toggle_reblip_in_new_window();
 
     console.log("Toggled reblip_in_new_window:", val);
+  });
+
+  $("#option__reblip_in_new_window_background").click(function(){
+
+    var val = $(this).is(":checked");
+    toggle_reblip_in_new_window_background();
+
+    console.log("Toggled reblip_in_new_window_background:", val);
+  });
+
+  $("#option__reblip_default").click(function(){
+
+    var val = $(this).is(":checked");
+    toggle_reblip_default();
+
+    console.log("Toggled reblip_default:", val);
   });
 </script>
 

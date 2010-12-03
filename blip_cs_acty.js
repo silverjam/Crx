@@ -215,6 +215,8 @@ function on_blip_email_loaded(desc)
 	desc.attached = true;
 }
 
+function fnil1(x) {}
+
 function insert_reblip_link(node)
 {
 	$(node).find(".date").each(function(){
@@ -233,14 +235,27 @@ function insert_reblip_link(node)
 		reblip.attr('href', "http://blip.fm/home?reblipId=" + rbid);
 		reblip.attr('target', "_blank");
 
+		reblip.click(function(){
+			chrome.extension.sendRequest(
+				{m:'open_tab', d:$(this).attr('href')}, fnil1);
+			return false;
+		});
+
 		a_node.after(reblip);
 	});
 }
 
-if ( get_reblip_in_new_window() )
+function insert_reblip_default(node)
 {
-	$(document).bind('DOMNodeInserted', function(evt){
-		insert_reblip_link(evt.target);
+	$(node).find("#blipForm label:first").each(function(){
+		//console.log('insert_reblip_default');
+		$(this)
+			.append(" <a href='#' style='font-size: 80%'>[+D]</a>")
+			.click(function(){
+				var v = $("#message").val();
+				$("#message").val(v + " " + $("span#selection").text());
+				return false;
+			});
 	});
 }
 
@@ -254,9 +269,18 @@ function main()
 			NaN);
 
 	scan(descriptor);
-	insert_reblip_link(document);
 
-	check_reblip_and_handle();
+	if ( get_reblip_in_new_window() )
+	{
+		insert_reblip_link(document);
+
+		$(document).bind('DOMNodeInserted', function(evt){
+			insert_reblip_link(evt.target);
+		});
+	}
+
+	if ( get_reblip_insert_default() )
+		insert_reblip_default(document);
 }
 
 main()

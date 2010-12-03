@@ -1,9 +1,10 @@
 
-{ "name" : "Blip.Fm + GMail Weekly Update Extension"
+{ "name" : "Blip.Fm + GMail Extension"
 
 , "version" : "0.2"
 , "description" : 
-		"Extract list of users from a Blip.Fm \"Weekly Activity Update\" email in GMail."
+
+  "Blip.Fm + GMail tweaks: extract list of top fans and new listeners from \"Weekly Update\" email in GMail, and add links to reblip from pages were a reblip would stop a song."
 
 , "options_page" : "options.html"
 

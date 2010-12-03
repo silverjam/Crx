@@ -5,8 +5,6 @@
 <script type="text/javascript" src="options.js"></script>
 
 <script>
-g_reblips = [];
-
 chrome.extension.onRequest.addListener(
 
 	function(request, sender, sendResponse)
@@ -14,6 +12,7 @@ chrome.extension.onRequest.addListener(
 		response = {};
 
 		msg = request.m;
+		console.log('Got message:', request);
 
 		if ( msg == 'enable' ) {
 			chrome.pageAction.show(sender.tab.id);
@@ -23,6 +22,14 @@ chrome.extension.onRequest.addListener(
 		else if ( msg == 'disable' ) {
 			chrome.pageAction.hide(sender.tab.id);
 			console.log("disabled icon");
+		}
+
+		else if ( msg == 'open_tab' ) {
+			chrome.tabs.create({
+				url: request.d,
+				index: sender.tab.index + 1,
+				selected: ! get_reblip_in_new_window_background()
+			});
 		}
 
 		else {
@@ -48,3 +55,6 @@ chrome.tabs.onUpdated.addListener(
 );
 
 </script></body></html>
+<!--
+vim: ts=2:sw=2:ai:
+-->
