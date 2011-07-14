@@ -13,8 +13,14 @@ if ( L.oneup_use_classic == undefined )
 function get_oneup_use_sounds()
 	{ return JSON.parse(L.oneup_use_sounds); }
 
+function bckgrnd_get_oneup_use_sounds(cb)
+	{ chrome.extension.sendRequest({m:'get_oneup_use_sounds'}, cb); }
+
 function get_oneup_use_classic()
 	{ return JSON.parse(L.oneup_use_classic); }
+
+function bckgrnd_get_oneup_use_classic(cb)
+	{ chrome.extension.sendRequest({m:'get_oneup_use_classic'}, cb); }
 
 
 

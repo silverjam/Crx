@@ -2,7 +2,36 @@
 <html><head></head>
 <body>
 
+<script type="text/javascript" src="options.js"></script>
+
 <script>
+
+chrome.extension.onRequest.addListener(
+
+	function(request, sender, sendResponse)
+	{
+		response = {};
+
+		msg = request.m;
+		console.log('Got message:', request);
+
+		if ( msg == 'get_oneup_use_sounds' ) {
+			response = get_oneup_use_sounds();
+		}
+
+		else if ( msg == 'get_oneup_use_classic' ) {
+			response = get_oneup_use_classic();
+		}
+
+		else {
+			console.log("Unknown message: ", msg);
+			response = undefined;
+		}
+
+		console.log('Sending response:', response);
+		sendResponse(response);
+	}
+);
 
 chrome.tabs.onUpdated.addListener(
 

@@ -55,7 +55,7 @@ Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
         value="oneup_sounds"
       />
       <label for="option__sounds">
-        Enable <em>sounds</em>.
+        Enable sounds.
       </label>
 
       <br/>
@@ -78,6 +78,15 @@ Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
 
 <script>
 
+  function updatectrls()
+  {
+    var val = $("#option__sounds").is(":checked");
+    if ( val )
+      $("#option__classic_sound").removeAttr('disabled');
+    else
+      $("#option__classic_sound").attr('disabled', '1');
+  }
+
   ///////////////////////////////////////////////////////////////////////////
   // Load initial values
   ///////////////////////////////////////////////////////////////////////////
@@ -90,22 +99,20 @@ Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
     $("#option__classic_sound")
       .val(["oneup_classic"])
 
+  updatectrls();
+
   ///////////////////////////////////////////////////////////////////////////
   // Toggle values
   ///////////////////////////////////////////////////////////////////////////
+
   $("#option__sounds").click(function(){
-
-    var val = $(this).is(":checked");
+    updatectrls();
     toggle_oneup_use_sounds();
-
     console.log("Toggled oneup_sounds:", get_oneup_use_sounds());
   });
 
   $("#option__classic_sound").click(function(){
-
-    var val = $(this).is(":checked");
     toggle_oneup_use_classic();
-
     console.log("Toggled oneup_classic:", get_oneup_use_classic());
   });
 
