@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html><head></head>
+<body>
+
+<script>
+
+chrome.tabs.onUpdated.addListener(
+
+	function(tabId, info, tab){
+		if ( tab.url.indexOf("https://plus.google.com") == 0 || 
+		     tab.url.indexOf("http://plus.google.com") == 0 ) {
+			chrome.pageAction.show(tabId);
+		}
+	}
+);
+
+</script></body></html>
+<!--
+vim: ts=2:sw=2:ai:
+-->

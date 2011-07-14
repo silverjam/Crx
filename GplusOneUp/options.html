@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blip.Fm + GMail Extension</title>
+<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+<script type="text/javascript" src="options.js"></script>
+<style type="text/css">
+.border { 
+	border: 1px solid #6080a0; 	
+	width: 80%; 
+  margin-bottom: 10px;
+}
+#header { 
+	background-color: #e0e0e0; 
+	border-bottom: 1px solid #6080a0;
+ 	width: 80%;
+}
+#options_list {
+    list-style-type: none;
+}
+#options_list lh {
+  text-decoration: underline;
+}
+.options_header {
+  background-color: #e0e0e0;
+  margin: 5px;
+}
+.clickable {
+  text-decoration: none;
+  color: normal;
+}
+</style>
+</head>
+<body>
+
+<h2 id="header">1-up for Google+</h2>
+
+<!--
+<p>Thanks for using this extension!
+Please send comments, bugs, and/or questions to the project
+<a href="https://github.com/silverjam/BlipFm-Chrome-Extension">webpage</a>.
+Or via <a href="mailto:blip.fm.crx@d43d4l.us">email</a> (blip.fm.crx@d43d4l.us).
+</p>
+-->
+
+<div class="border">
+  <div class="options_header">Options</div>
+  <ul id="options_list">
+  <li>
+    <form>
+
+      <input 
+        type="checkbox"
+        id="option__sounds"
+        value="oneup_sounds"
+      />
+      <label for="option__sounds">
+        Enable <em>sounds</em>.
+      </label>
+
+      <br/>
+
+      <input 
+        type="checkbox"
+        id="option__classic_sound"
+        value="oneup_classic"
+      />
+      <label for="option__classic_sound">
+        Use the classic 1-up sound.
+      </label>
+
+      <br/>
+  
+    </form>
+  </li>
+</ul>
+</div>
+
+<script>
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Load initial values
+  ///////////////////////////////////////////////////////////////////////////
+
+  if ( get_oneup_use_sounds() )
+    $("#option__sounds")
+      .val(["oneup_sounds"]);
+
+  if ( get_oneup_use_classic() )
+    $("#option__classic_sound")
+      .val(["oneup_classic"])
+
+  ///////////////////////////////////////////////////////////////////////////
+  // Toggle values
+  ///////////////////////////////////////////////////////////////////////////
+  $("#option__sounds").click(function(){
+
+    var val = $(this).is(":checked");
+    toggle_oneup_use_sounds();
+
+    console.log("Toggled oneup_sounds:", get_oneup_use_sounds());
+  });
+
+  $("#option__classic_sound").click(function(){
+
+    var val = $(this).is(":checked");
+    toggle_oneup_use_classic();
+
+    console.log("Toggled oneup_classic:", get_oneup_use_classic());
+  });
+
+</script>
+
+</body>
+</html>
+
+<!-- vim: et:sts=2:sw=2:ts=2:tw=0:
+-->

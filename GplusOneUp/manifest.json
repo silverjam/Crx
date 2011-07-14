@@ -1,0 +1,46 @@
+
+{ "name" : "1-Up for Google+"
+
+, "version" : "0"
+, "description" : 
+
+  "Changes the Google+ '+1' action into Marios Bros style 1-ups."
+
+, "options_page" : "options.html"
+
+, "page_action" : {
+	  "default_icon" : "icon-16.png"
+	, "default_title" : "Right click to configure."
+}
+
+, "background_page" : "background.html"
+
+, "permissions": 
+	[ "tabs"
+	, "https://plus.google.com/*"
+	]
+
+, "icons" : 
+	{ 
+	  "16"  : "icon-16.png"
+	, "48"  : "icon-48.png"
+	, "64"  : "icon-64.png"
+	, "128" : "icon-128.png"
+	, "256" : "icon-256.png"
+  }
+
+, "content_scripts" : 
+	[ { "matches" : 
+		[ "https://plus.google.com/*"
+		]
+    , "js" : 
+				[ "jquery-1.4.1.min.js"
+				, "options.js"
+				, "sounds.js"
+				, "oneup.js"
+				]
+
+    , "css" : [ "oneup.css" ]
+    }
+  ]
+}
