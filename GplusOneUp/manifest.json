@@ -1,10 +1,10 @@
 
 { "name" : "1-Up for Google+"
 
-, "version" : "0"
+, "version" : "1.1"
 , "description" : 
 
-  "Changes the Google+ '+1' action into Marios Bros style 1-ups."
+  "Changes your +1 icon on Google+ into a 1-up mushroom from Mario Brothers. Complete with sound!"
 
 , "options_page" : "options.html"
 
