@@ -2,7 +2,7 @@
 
 function sounds_cb()
 {
-	var oneuped = $(this).is(".eswa");
+	var oneuped = ! $(this).is(".eswa");
 
 	bckgrnd_get_oneup_use_sounds(
 	function(oneup_use_sounds) {
@@ -37,7 +37,7 @@ function main()
 	console.log("oneup starts...");
 
 	$("body").append(g_oneup_sounds);
-	$(".esw").click(sounds_cb);
+	$(".esw").live('click', sounds_cb);
 }
 
 
