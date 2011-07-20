@@ -64,6 +64,17 @@
       </label>
 
       <br/>
+
+       <input 
+        type="checkbox"
+        id="option__address_bar_icon"
+        value="oneup_address_bar_icon"
+      />
+      <label for="option__address_bar_icon">
+        Show the address bar icon.
+      </label>
+
+      <br/>
   
     </form>
   </li>
@@ -97,6 +108,10 @@
     $("#option__classic_sound")
       .val(["oneup_classic"])
 
+  if ( get_oneup_address_bar_icon() )
+    $("#option__address_bar_icon")
+      .val(["oneup_address_bar_icon"])
+
   updatectrls();
 
   ///////////////////////////////////////////////////////////////////////////
@@ -112,6 +127,12 @@
   $("#option__classic_sound").click(function(){
     toggle_oneup_use_classic();
     console.log("Toggled oneup_classic:", get_oneup_use_classic());
+  });
+
+
+  $("#option__address_bar_icon").click(function(){
+    toggle_oneup_address_bar_icon();
+    console.log("Toggled oneup_address_bar_icon:", get_oneup_address_bar_icon());
   });
 
 </script>

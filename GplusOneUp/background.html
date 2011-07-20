@@ -36,6 +36,10 @@ chrome.extension.onRequest.addListener(
 chrome.tabs.onUpdated.addListener(
 
 	function(tabId, info, tab){
+	
+	if ( ! get_oneup_address_bar_icon() )
+		return;
+
 		if ( tab.url.indexOf("https://plus.google.com") == 0 || 
 		     tab.url.indexOf("http://plus.google.com") == 0 ) {
 			chrome.pageAction.show(tabId);
