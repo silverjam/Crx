@@ -23,7 +23,10 @@ function sounds_cb()
 	else
 		theId = "oneup_sound_anlg";
 
-	document.getElementById(theId).play();
+	var snd = document.getElementById(theId);
+
+	snd.play();
+	snd.volume = .6;
 
 	console.log("1-up!");
 
