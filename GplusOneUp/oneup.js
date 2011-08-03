@@ -41,6 +41,15 @@ function main()
 
 	$("body").append(g_oneup_sounds);
 	$(".esw").live('click', sounds_cb);
+
+	$(".eswa").addClass("oneup_rgy_inv");
+
+	$(".eswd").addClass("oneup_rgy");
+
+	$(".eswd").hover(
+		function() { $(this).addClass("oneup_rgy"); },
+		function() { $(this).addClass("oneup_rgy"); }
+	);
 }
 
 

@@ -2,23 +2,37 @@ import base64
 
 of = file('sounds.js', 'w')
 
-data = str.join('', base64.encodestring(file("1up-anlg.mp3", "rb").read()).split())
+def encode(fn):
+    fp = file(fn, "rb")
+    bin = fp.read()
+    b64 = base64.encodestring(bin).split()
+    return b64
 
-of.write('''
-g_oneup_sounds = 
+tmpl = '''
 '<audio ' +
-    'id="oneup_sound_anlg" type="audio/mpeg" src="data:audio/mpeg;base64,''')
+  'id="%(ID)s" ' +
+  'type="audio/mpeg" ' +
+  'src="data:audio/mpeg;base64,' +
+%(DATA)s">' +
+'</audio>'
+'''
 
-of.write(data)
-of.write('"></audio>\'')
+of.write("g_oneup_sounds = \n")
 
-data = str.join('', base64.encodestring(file("1up-dig.mp3", "rb").read()).split())
+data = encode("1up-anlg.mp3")
+data = str.join("' + \n'", data)
+data = "'" + data
 
-of.write('''
-+ '<audio ' +
-    'id="oneup_sound_dig" type="audio/mpeg" src="data:audio/mpeg;base64,''')
+of.write(tmpl % { 'ID': 'oneup_sound_anlg', 'DATA': data})
 
-of.write(data)
-of.write('"></audio>\'')
+data = encode("1up-dig.mp3")
+data = str.join("' + \n'", data)
+data = "'" + data
+
+of.write(" + \n")
+
+of.write(tmpl % { 'ID': 'oneup_sound_dig', 'DATA': data})
+
+of.write(" ; \n")
 
 of.close()
