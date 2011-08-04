@@ -35,6 +35,17 @@ function sounds_cb()
 	}); // bckgrnd_get_oneup_use_sounds
 }
 
+function add_style(style_id, style_text) {
+
+	$("#" + style_id).remove();
+
+	$("head").append(
+		"<style id='"+style_id+"'>"
+			+ style_text +
+		"</style>"
+	);
+}
+
 function main()
 {
 	console.log("oneup starts...");
@@ -42,14 +53,7 @@ function main()
 	$("body").append(g_oneup_sounds);
 	$(".esw").live('click', sounds_cb);
 
-	$(".eswa").addClass("oneup_rgy_inv");
-
-	$(".eswd").addClass("oneup_rgy");
-
-	$(".eswd").hover(
-		function() { $(this).addClass("oneup_rgy"); },
-		function() { $(this).addClass("oneup_rgy"); }
-	);
+	add_style("rgy_style", g_icon_15rgy)
 }
 
 
