@@ -1,4 +1,4 @@
-Blip.Fm + GMail "Weekly Update" Chrom Extension
------------------------------------------------
+Repo houses various Chrome extensions:
 
-Extract list of users from a Blip.Fm "Weekly Activity Update" email in GMail.
++ "1-up for Google+"
++ Blip.Fm chrome extension (currently "TAKEN DOWN" from webstore)
