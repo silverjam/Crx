@@ -6,6 +6,8 @@
 
 <script>
 
+var do_change_icon_type_cb = undefined;
+
 chrome.extension.onRequest.addListener(
 
 	function(request, sender, sendResponse)
@@ -15,12 +17,28 @@ chrome.extension.onRequest.addListener(
 		msg = request.m;
 		console.log('Got message:', request);
 
+		console.log(sender);
+		console.log(do_change_icon_type_cb);
+
 		if ( msg == 'get_oneup_use_sounds' ) {
 			response = get_oneup_use_sounds();
 		}
 
+		else if ( msg == 'get_oneup_icon_type' ) {
+			response = get_oneup_icon_type();
+		}
+
 		else if ( msg == 'get_oneup_use_classic' ) {
 			response = get_oneup_use_classic();
+		}
+
+		else if ( msg == 'register_for_change_icon_type' ) {
+			do_change_icon_type_cb = sendResponse;
+			sendResponse = function(){};
+		}
+
+		else if ( msg == 'do_change_icon_type' ) {
+			do_change_icon_type_cb(request.d);
 		}
 
 		else {

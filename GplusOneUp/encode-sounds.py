@@ -34,8 +34,6 @@ of.write(" + \n")
 of.write(tmpl % { 'ID': 'oneup_sound_dig', 'DATA': data})
 of.write(" ; \n")
 
-of.write("g_icon_15rgy = \n")
-
 tmpl_img = '''
 '.%(CLASS_ID)s { ' +
   'background: ' + 
@@ -44,15 +42,22 @@ tmpl_img = '''
 '!important; }'
 '''
 
-data = wrapdata(encode("icon-15g.png"))
-of.write(tmpl_img % {'CLASS_ID': 'eswd', 'DATA': data})
-of.write(" + \n")
+def write_css(name, file1, file2):
 
-of.write(tmpl_img % {'CLASS_ID': 'eswd:hover', 'DATA': data})
-of.write(" + \n")
+	data = wrapdata(encode(file1))
+	of.write("%s = \n" % (name,))
+	of.write(tmpl_img % {'CLASS_ID': 'eswd', 'DATA': data})
+	of.write(" + \n")
 
-data = wrapdata(encode("icon-15g-inv.png"))
-of.write(tmpl_img % {'CLASS_ID': 'eswa', 'DATA': data})
-of.write(" ; \n")
+	of.write(tmpl_img % {'CLASS_ID': 'eswd:hover', 'DATA': data})
+	of.write(" + \n")
+
+	data = wrapdata(encode(file2))
+	of.write(tmpl_img % {'CLASS_ID': 'eswa', 'DATA': data})
+	of.write(" ; \n")
+
+write_css("g_icon_15rgy", "icon-15g.png", "icon-15g-inv.png")
+write_css("g_icon_15red", "icon-15r.png", "icon-15r-inv.png")
+write_css("g_icon_15rgy1", "icon-15g1.png", "icon-15g1-inv.png")
 
 of.close()

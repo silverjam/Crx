@@ -75,6 +75,8 @@
       </label>
 
       <br/>
+
+      <button id="change_icon">click me</button>
   
     </form>
   </li>
@@ -117,6 +119,17 @@
   ///////////////////////////////////////////////////////////////////////////
   // Toggle values
   ///////////////////////////////////////////////////////////////////////////
+
+  $("#change_icon").click(function(){
+
+    icon_type = get_oneup_icon_type();
+    icon_type++;
+
+    if ( icon_type > IconType.LAST ) 
+      icon_type = IconType.FIRST;
+
+    change_icon_type(icon_type);
+  });
 
   $("#option__sounds").click(function(){
     updatectrls();

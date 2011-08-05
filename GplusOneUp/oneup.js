@@ -46,6 +46,23 @@ function add_style(style_id, style_text) {
 	);
 }
 
+function do_change_icon_type_fn(icon_type) {
+
+	if ( icon_type == IconType.GREEN ) 
+		add_style("rgy_style", '')
+
+	else if ( icon_type == IconType.RGY ) 
+		add_style("rgy_style", g_icon_15rgy)
+
+	else if ( icon_type == IconType.RGY_1 ) 
+		add_style("rgy_style", g_icon_15rgy1)
+
+	else if ( icon_type == IconType.RED ) 
+		add_style("rgy_style", g_icon_15red)
+
+	register_for_change_icon_type(do_change_icon_type_fn);
+}
+
 function main()
 {
 	console.log("oneup starts...");
@@ -53,7 +70,7 @@ function main()
 	$("body").append(g_oneup_sounds);
 	$(".esw").live('click', sounds_cb);
 
-	add_style("rgy_style", g_icon_15rgy)
+	bckgrnd_get_oneup_icon_type(do_change_icon_type_fn);
 }
 
 
