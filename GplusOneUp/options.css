@@ -1,0 +1,77 @@
+.border { 
+	border: 1px solid #6080a0; 	
+	width: 80%; 
+  margin-bottom: 10px;
+}
+
+#header { 
+	background-color: #e0e0e0; 
+	border-bottom: 1px solid #6080a0;
+ 	width: 80%;
+}
+
+#options_list {
+    list-style-type: none;
+}
+
+#options_list lh {
+  text-decoration: underline;
+}
+
+.options_header {
+  background-color: #e0e0e0;
+  margin: 5px;
+}
+
+.clickable {
+  text-decoration: none;
+  color: normal;
+}
+
+#img_green_icon {
+ 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png) bottom;
+	width: 24px;
+	height: 15px;
+	display: inline-block;
+}
+
+#img_green_icon:hover {
+	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png);
+}
+
+#img_rgy_icon {
+ 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g.png) bottom;
+	width: 24px;
+	height: 15px;
+	display: inline-block;
+}
+
+#img_rgy_icon:hover {
+	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g-inv.png);
+}
+
+#img_rgy1_icon {
+ 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g1.png) bottom;
+	width: 24px;
+	height: 15px;
+	display: inline-block;
+}
+
+#img_rgy1_icon:hover {
+	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g1-inv.png);
+}
+
+#img_red_icon {
+ 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15r.png) bottom;
+	width: 24px;
+	height: 15px;
+	display: inline-block;
+}
+
+#img_red_icon:hover {
+	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15r-inv.png);
+}
+
+ul {
+	list-style-type: none;
+}
