@@ -27,6 +27,7 @@ cp("jquery-1.4.1.min.js", pkg)
 
 cp("background.html", pkg)
 cp("options.html", pkg)
+cp("options.css", pkg)
 
 cp("oneup.css", pkg)
 
