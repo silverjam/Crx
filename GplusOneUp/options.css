@@ -29,47 +29,47 @@
 }
 
 #img_green_icon {
- 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png) bottom;
+ 	background: url(chrome-extension://__MSG_@@extension_id__/icon-15.png) bottom;
 	width: 24px;
 	height: 15px;
 	display: inline-block;
 }
 
 #img_green_icon:hover {
-	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png);
+	background: url(chrome-extension://__MSG_@@extension_id__/icon-15-inv.png);
 }
 
 #img_rgy_icon {
- 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g.png) bottom;
+ 	background: url(chrome-extension://__MSG_@@extension_id__/icon-15g.png) bottom;
 	width: 24px;
 	height: 15px;
 	display: inline-block;
 }
 
 #img_rgy_icon:hover {
-	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g-inv.png);
+	background: url(chrome-extension://__MSG_@@extension_id__/icon-15g-inv.png);
 }
 
 #img_rgy1_icon {
- 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g1.png) bottom;
+ 	background: url(chrome-extension://__MSG_@@extension_id__/icon-15g1.png) bottom;
 	width: 24px;
 	height: 15px;
 	display: inline-block;
 }
 
 #img_rgy1_icon:hover {
-	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15g1-inv.png);
+	background: url(chrome-extension://__MSG_@@extension_id__/icon-15g1-inv.png);
 }
 
 #img_red_icon {
- 	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15r.png) bottom;
+ 	background: url(chrome-extension://__MSG_@@extension_id__/icon-15r.png) bottom;
 	width: 24px;
 	height: 15px;
 	display: inline-block;
 }
 
 #img_red_icon:hover {
-	background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15r-inv.png);
+	background: url(chrome-extension://__MSG_@@extension_id__/icon-15r-inv.png);
 }
 
 ul {
