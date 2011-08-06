@@ -4,32 +4,7 @@
 <title>1-Up for Google+ Options</title>
 <script type="text/javascript" src="jquery-1.4.1.min.js"></script>
 <script type="text/javascript" src="options.js"></script>
-<style type="text/css">
-.border { 
-	border: 1px solid #6080a0; 	
-	width: 80%; 
-  margin-bottom: 10px;
-}
-#header { 
-	background-color: #e0e0e0; 
-	border-bottom: 1px solid #6080a0;
- 	width: 80%;
-}
-#options_list {
-    list-style-type: none;
-}
-#options_list lh {
-  text-decoration: underline;
-}
-.options_header {
-  background-color: #e0e0e0;
-  margin: 5px;
-}
-.clickable {
-  text-decoration: none;
-  color: normal;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="chrome-extension://faacmgakefdoaemgapklcilncpmldaai/options.css" />
 </head>
 <body>
 
@@ -75,15 +50,53 @@
       </label>
 
       <br/>
+      <br/>
 
-      <button id="change_icon">click me</button>
-  
+      <input 
+        type="checkbox"
+        id="option__green_icon"
+        value="oneup_green_icon"
+      />
+      <label id="id_option_green_icon" for="option__green_icon">
+        <a href="#" id="img_green_icon"></a>
+      </label>
+
+      <input 
+        type="checkbox"
+        id="option__rgy_icon"
+        value="oneup_rgy_icon"
+      />
+      <label id="id_option_rgy_icon" for="option__rgy_icon">
+        <a href="#" id="img_rgy_icon"></a>
+      </label>
+
+      <input 
+        type="checkbox"
+        id="option__rgy1_icon"
+        value="oneup_rgy1_icon"
+      />
+      <label id="id_option_rgy1_icon" for="option__rgy1_icon">
+        <a href="#" id="img_rgy1_icon"></a>
+      </label>
+
+      &nbsp;
+ 
+      <input 
+        type="checkbox"
+        id="option__red_icon"
+        value="oneup_red_icon"
+      />
+      <label id="id_option_red_icon" for="option__red_icon">
+        <a href="#" id="img_red_icon"></a>
+      </label>
+ 
     </form>
   </li>
 </ul>
 </div>
 
-<p>Contact <a href="http://gplus.to/silv3rjam">me on Google+</a> for support</p>
+
+<p>Contact <a id="foo" href="http://gplus.to/silv3rjam">me on Google+</a> for support</p>
 <p>Source code is at <a href="https://github.com/silverjam/Crx/tree/master/GplusOneUp">github</a>.
 </p>
 
@@ -92,10 +105,21 @@
   function updatectrls()
   {
     var val = $("#option__sounds").is(":checked");
+
     if ( val )
       $("#option__classic_sound").removeAttr('disabled');
     else
       $("#option__classic_sound").attr('disabled', '1');
+
+    
+  }
+
+  function update_icon_buttons(icon_type) {
+
+    $("#option__green_icon").attr('checked', icon_type == IconType.GREEN);
+    $("#option__rgy_icon").attr('checked', icon_type == IconType.RGY);
+    $("#option__rgy1_icon").attr('checked', icon_type == IconType.RGY_1);
+    $("#option__red_icon").attr('checked', icon_type == IconType.RED);
   }
 
   ///////////////////////////////////////////////////////////////////////////
@@ -114,22 +138,14 @@
     $("#option__address_bar_icon")
       .val(["oneup_address_bar_icon"])
 
+  var icon_type = get_oneup_icon_type();
+
+  update_icon_buttons(icon_type);
   updatectrls();
 
   ///////////////////////////////////////////////////////////////////////////
   // Toggle values
   ///////////////////////////////////////////////////////////////////////////
-
-  $("#change_icon").click(function(){
-
-    icon_type = get_oneup_icon_type();
-    icon_type++;
-
-    if ( icon_type > IconType.LAST ) 
-      icon_type = IconType.FIRST;
-
-    change_icon_type(icon_type);
-  });
 
   $("#option__sounds").click(function(){
     updatectrls();
@@ -148,6 +164,31 @@
     console.log("Toggled oneup_address_bar_icon:", get_oneup_address_bar_icon());
   });
 
+  genchkhdl = function(option_id, icon_type, icon_name) {
+    $(option_id).click(function(){
+      change_icon_type(icon_type);
+      update_icon_buttons(icon_type);
+      console.log("Changed to " + icon_name + " icon type.");
+    });
+  };
+
+  genchkhdl("#option__green_icon", IconType.GREEN, "green");
+  genchkhdl("#option__rgy_icon", IconType.RGY, "rgy");
+  genchkhdl("#option__rgy1_icon", IconType.RGY_1, "rgy1");
+  genchkhdl("#option__red_icon", IconType.RED, "red");
+
+  genclkhdl = function(img_id, option_id) {
+    $(img_id).click(function(){
+      $(option_id).click();
+      $(option_id).attr('checked', true);
+    });
+  }
+
+  genclkhdl("#img_green_icon", "#option__green_icon")
+  genclkhdl("#img_rgy_icon", "#option__rgy_icon")
+  genclkhdl("#img_red_icon", "#option__red_icon")
+  genclkhdl("#img_rgy1_icon", "#option__rgy1_icon")
+    
 </script>
 
 </body>
