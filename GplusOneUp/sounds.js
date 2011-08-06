@@ -20,7 +20,7 @@ g_icon_15rgy =
 '.eswd { ' +
   'background: ' + 
   'url(chrome-extension://' + extid + '/icon-15g.png) ' +
-'}\n' 
+'!important; }\n'
  + 
 
 '.eswd:hover { ' +
