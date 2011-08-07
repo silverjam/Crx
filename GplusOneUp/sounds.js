@@ -7,9 +7,32 @@ g_oneup_sounds =
   'src="chrome-extension://' + extid + '/1up-anlg.mp3">' +
 '</audio>'
  + 
-
+'<audio ' +
+  'id="oneup_sound_anlg2" ' +
+  'type="audio/mpeg" ' +
+  'src="chrome-extension://' + extid + '/1up-anlg.mp3">' +
+'</audio>'
+ + 
+'<audio ' +
+  'id="oneup_sound_anlg3" ' +
+  'type="audio/mpeg" ' +
+  'src="chrome-extension://' + extid + '/1up-anlg.mp3">' +
+'</audio>'
+ + 
 '<audio ' +
   'id="oneup_sound_dig" ' +
+  'type="audio/mpeg" ' +
+  'src="chrome-extension://' + extid + '/1up-dig.mp3">' +
+'</audio>'
++
+'<audio ' +
+  'id="oneup_sound_dig2" ' +
+  'type="audio/mpeg" ' +
+  'src="chrome-extension://' + extid + '/1up-dig.mp3">' +
+'</audio>'
++
+'<audio ' +
+  'id="oneup_sound_dig3" ' +
   'type="audio/mpeg" ' +
   'src="chrome-extension://' + extid + '/1up-dig.mp3">' +
 '</audio>'

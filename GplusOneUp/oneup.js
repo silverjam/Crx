@@ -18,12 +18,17 @@ function sounds_cb()
 	bckgrnd_get_oneup_use_classic(
 	function(oneup_use_classic) {
 
+	var snd = null;
+
 	if ( oneup_use_classic )
 		theId = "oneup_sound_dig";
 	else
 		theId = "oneup_sound_anlg";
 
-	var snd = document.getElementById(theId);
+	while(true) {
+		snd = document.getElementById(theId);
+		break;
+	}
 
 	snd.play();
 	snd.volume = .6;
