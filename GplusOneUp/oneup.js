@@ -25,15 +25,27 @@ function sounds_cb()
 	else
 		theId = "oneup_sound_anlg";
 
-	while(true) {
-		snd = document.getElementById(theId);
-		break;
-	}
+	$.each(
+		["", "2", "3"],
 
+		function(idx, val) {
+
+			var curId = theId + val;
+			snd = document.getElementById(curId);
+
+			if ( ! snd._oneup_isplaying )
+				return false;
+		}
+	);
+
+	//console.log("[ONEUP] Playing: " + snd.id);
+
+	snd._oneup_isplaying = true;
 	snd.play();
+
 	snd.volume = .6;
 
-	console.log("1-up!");
+	//console.log("[ONEUP] 1-up!");
 
 	}); // bckgrnd_get_oneup_use_classic
 
@@ -68,12 +80,29 @@ function do_change_icon_type_fn(icon_type) {
 	register_for_change_icon_type(do_change_icon_type_fn);
 }
 
+
 function main()
 {
-	console.log("oneup starts...");
+	console.log("1-Up for Google+ extension loading...");
 
 	$("body").append(g_oneup_sounds);
 	$(".esw").live('click', sounds_cb);
+
+	var notisplaying = function() { 
+		//console.log("notisplaying: " + this.id);
+		this._oneup_isplaying = false; }
+
+	$.each(
+
+		["#oneup_sound_anlg", "#oneup_sound_anlg2", "#oneup_sound_anlg3",
+			"#oneup_sound_dig", "#oneup_sound_dig2", "#oneup_sound_dig3"],
+
+		function(idx, val) {
+			$(val).bind('ended', notisplaying)
+			$(val)[0]._oneup_isplaying = false;
+		}
+
+	);
 
 	bckgrnd_get_oneup_icon_type(do_change_icon_type_fn);
 }
