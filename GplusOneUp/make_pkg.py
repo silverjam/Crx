@@ -23,7 +23,7 @@ cp("manifest.json", pkg)
 cp("oneup.js", pkg)
 cp("sounds.js", pkg)
 cp("options.js", pkg)
-cp("jquery-1.4.1.min.js", pkg)
+cp("jquery-1.7.1.min.js", pkg)
 
 cp("background.html", pkg)
 cp("options.html", pkg)
@@ -33,15 +33,23 @@ cp("oneup.css", pkg)
 
 cp("icon-15.png", pkg)
 cp("icon-15-inv.png", pkg)
+cp("icon-15-38x24.png", pkg)
+cp("icon-15-inv-38x24.png", pkg)
 
 cp("icon-15g.png", pkg)
 cp("icon-15g-inv.png", pkg)
+cp("icon-15g-38x24.png", pkg)
+cp("icon-15g-inv-38x24.png", pkg)
 
 cp("icon-15g1.png", pkg)
 cp("icon-15g1-inv.png", pkg)
+cp("icon-15g1-38x24.png", pkg)
+cp("icon-15g1-inv-38x24.png", pkg)
 
 cp("icon-15r.png", pkg)
 cp("icon-15r-inv.png", pkg)
+cp("icon-15r-38x24.png", pkg)
+cp("icon-15r-inv-38x24.png", pkg)
 
 cp("icon-16.png", pkg)
 cp("icon-48.png", pkg)
