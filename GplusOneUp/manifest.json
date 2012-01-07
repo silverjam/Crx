@@ -34,7 +34,7 @@
 		[ "https://plus.google.com/*"
 		]
     , "js" : 
-				[ "jquery-1.4.1.min.js"
+				[ "jquery-1.7.1.min.js"
 				, "options.js"
 				, "sounds.js"
 				, "oneup.js"
@@ -43,4 +43,5 @@
     , "css" : [ "oneup.css" ]
     }
   ]
+
 }
