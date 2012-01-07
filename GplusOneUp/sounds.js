@@ -44,17 +44,35 @@ g_icon_15rgy =
   'background: ' + 
   'url(chrome-extension://' + extid + '/icon-15g.png) ' +
 '!important; }\n'
- + 
++ 
 
 '.eswd:hover { ' +
   'background: ' + 
   'url(chrome-extension://' + extid + '/icon-15g.png) ' +
 '!important; }\n'
++
 
- + 
+'.Dxqpoe { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g-38x24.png) ' +
+'!important; }\n'
++ 
+
+'.Dxqpoe:hover { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g-38x24.png) ' +
+'!important; }\n'
++ 
+
 '.eswa { ' +
   'background: ' + 
   'url(chrome-extension://' + extid + '/icon-15g-inv.png) ' +
+'!important; }\n'
++
+
+'.RlYuqd { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g-inv-38x24.png) ' +
 '!important; }\n'
  ; 
 
@@ -71,6 +89,24 @@ g_icon_15red =
   'url(chrome-extension://' + extid + '/icon-15r.png) ' +
 '!important; }'
  + 
+
+'.Dxqpoe { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15r-38x24.png) ' +
+'!important; }\n'
+ + 
+
+'.Dxqpoe:hover { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15r-38x24.png) ' +
+'!important; }'
+ + 
+
+'.RlYuqd { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15r-inv-38x24.png) ' +
+'!important; }\n'
++
 
 '.eswa { ' +
   'background: ' + 
@@ -91,6 +127,24 @@ g_icon_15rgy1 =
   'url(chrome-extension://' + extid + '/icon-15g1.png) ' +
 '!important; }\n'
  + 
+
+'.Dxqpoe { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g1-38x24.png) ' +
+'!important; }\n'
+ + 
+
+'.Dxqpoe:hover { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g1-38x24.png) ' +
+'!important; }\n'
+ + 
+
+'.RlYuqd { ' +
+  'background: ' + 
+  'url(chrome-extension://' + extid + '/icon-15g1-inv-38x24.png) ' +
+'!important; }\n'
++
 
 '.eswa { ' +
   'background: ' + 

@@ -2,7 +2,7 @@
 
 function sounds_cb()
 {
-	var oneuped = ! $(this).is(".eswa");
+	var oneuped = ! $(this).is(".eswa, .Dxqpoe");
 
 	bckgrnd_get_oneup_use_sounds(
 	function(oneup_use_sounds) {
@@ -86,7 +86,15 @@ function main()
 	console.log("1-Up for Google+ extension loading...");
 
 	$("body").append(g_oneup_sounds);
-	$(".esw").live('click', sounds_cb);
+
+	$(document).on('click', '.esw', sounds_cb);
+
+	// Funny things will happen if a mouse down happens over the button, but
+	// the mouse up elsewhere.  Something in the DOM stops the 'click' even for
+	// this button (probably something in the image view).  Would need to bind
+	// to a DOM element before the event bubbling is stopped to catch the
+	// 'click' event.
+	$(document).on('mousedown', '.upBjpf', sounds_cb);
 
 	var notisplaying = function() { 
 		//console.log("notisplaying: " + this.id);

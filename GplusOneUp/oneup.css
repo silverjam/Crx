@@ -1,13 +1,29 @@
-
-.eswd {
-background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png)
-!important;
+.eswd
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15.png) !important;
 }
 
-.eswd:hover {
-background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png)
-!important;}
+.Dxqpoe
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15-38x24.png) !important;
+}
 
-.eswa {
-background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png)
-!important;}
+.eswd:hover
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15.png) !important;
+}
+
+.Dxqpoe:hover
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15-38x24.png) !important;
+}
+
+.eswa 
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15-inv.png) !important;
+}
+
+.RlYuqd
+{
+  background: url(chrome-extension://faacmgakefdoaemgapklcilncpmldaai/icon-15-inv-38x24.png) !important;
+}
