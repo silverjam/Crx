@@ -1,29 +1,58 @@
 .eswd
 {
   background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
 }
 
-.Dxqpoe
+.jEMdk.rydTWb
+{
+  visibility: hidden !important;
+}
+
+.Ee
 {
   background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-38x24.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important; 
 }
 
 .eswd:hover
 {
   background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important; 
 }
 
-.Dxqpoe:hover
+.Ee:hover
 {
   background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-38x24.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important; 
+}
+
+.Jt.eswa 
+{
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png), -webkit-linear-gradient(top, #D94F31, #D14228) !important;
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png), -moz-linear-gradient(top, #D94F31, #D14228) !important;
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png), -ms-linear-gradient(top, #D94F31, #D14228) !important;
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png), -o-linear-gradient(top, #D94F31, #D14228) !important;
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png), linear-gradient(top, #D94F31, #D14228) !important;
+
+  background-repeat:no-repeat !important;
+  background-position:center !important; 
 }
 
 .eswa 
 {
-  background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png) !important;
+  background-image: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important; 
 }
 
-.RlYuqd
+.qg
 {
   background: url(chrome-extension://pkmbgbnldenjnbgbigpkjokfdfgmmclo/icon-15-inv-38x24.png) !important;
+  background-repeat:no-repeat !important;
+  background-position:center !important;
 }

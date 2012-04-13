@@ -41,9 +41,8 @@ function sounds_cb()
 	//console.log("[ONEUP] Playing: " + snd.id);
 
 	snd._oneup_isplaying = true;
-	snd.play();
-
 	snd.volume = .6;
+	snd.play();
 
 	//console.log("[ONEUP] 1-up!");
 
