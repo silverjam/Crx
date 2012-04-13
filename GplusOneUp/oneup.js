@@ -2,7 +2,7 @@
 
 function sounds_cb()
 {
-	var oneuped = ! $(this).is(".eswa, .Dxqpoe");
+	var oneuped = ! $(this).is(".eswa, .Ee");
 
 	bckgrnd_get_oneup_use_sounds(
 	function(oneup_use_sounds) {
@@ -93,7 +93,7 @@ function main()
 	// this button (probably something in the image view).  Would need to bind
 	// to a DOM element before the event bubbling is stopped to catch the
 	// 'click' event.
-	$(document).on('mousedown', '.upBjpf', sounds_cb);
+	$(document).on('mousedown', '.bxthPe', sounds_cb);
 
 	var notisplaying = function() { 
 		//console.log("notisplaying: " + this.id);

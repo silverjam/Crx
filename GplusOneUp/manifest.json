@@ -1,7 +1,7 @@
 
 { "name" : "1-Up for Google+"
 
-, "version" : "1.14"
+, "version" : "1.15"
 , "description" : 
 
   "Changes your +1 icon on Google+ into a 1-up mushroom from Mario Brothers. Complete with sound!"
@@ -41,6 +41,7 @@
 				]
 
     , "css" : [ "oneup.css" ]
+    , "all_frames" : true
     }
   ]
 
