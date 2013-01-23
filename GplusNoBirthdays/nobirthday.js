@@ -1,15 +1,17 @@
 // oneup.js
 
 var g_count = 100;
+var g_element_id = "ntf";
 
 function nobirthday()
 {
-	var el = document.getElementById("ntf");
+	var el = document.getElementById(g_element_id);
 	if ( el != null )
 	{
 		el.hidden = true;
-		//alert("[Birthday86er] Removed birthday notification");
+
 		console.log("[Birthday86er] Removed birthday notification");
+		chrome.extension.sendMessage({m:'enable_page_action'}, function(r){});
 
 		return;
 	}
@@ -17,6 +19,7 @@ function nobirthday()
 	if ( g_count <= 0 )
 	{
 		console.log("[Birthday86er] Nothing found after a period of time, exiting");
+
 		return;
 	}
 
